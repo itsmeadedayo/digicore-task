@@ -16,43 +16,45 @@ var operator=expression[2]
 
 if(operator.trim() == '+' ){  
  
-    alert( add (  Number(op1 ), Number(op2) ) )
+    alert( add (  op1 , op2 ) )
              
 }
 else if(operator == '-' ){
        
-    alert( subtract(Number(op1 ), Number(op2)) )
+    alert( subtract(op1 , op2) )
 }
 else if(operator == '*' ){
     
     
-       alert(multiply(Number(op1 ), Number(op2)))
+       alert(multiply(op1 ,op2))
 }
 
 else if(operator == '/' ){
     
 
-    alert(divide(Number(op1 ), Number(op2)))
+    alert(divide(op1 , op2))
 }
 
 }
 
 function multiply(x,y){
-    if(y == 0)
-     return 0
+    // if(y == 0)
+    //  return 0
 
-     if(y > 0)
-        return (x + multiply(x, y-1))
+    //  if(y > 0)
+    //     return (x + multiply(x, y-1))
 
-    if(y < 0)
-       return -multiply(x, -y)
+    // if(y < 0)
+    //    return -multiply(x, -y)
  
-     return -1
-    //    result=0
-    // for(i=1; i<=y; i++){
-    //     result += x
-    // }
-    // return result
+    //  return -1
+    x = Number(x)
+    y=Number(y)
+       result=0
+    for(i=1; i<=y; i++){
+        result += x
+    }
+    return result
 }
 
 
