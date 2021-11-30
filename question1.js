@@ -5,7 +5,7 @@
 
 function compute(){
 
-var  a = prompt("enter a")// Input  2,2,+ Output 4’
+var  a = prompt("enter expression:(e.g 2,2,+)")// Input  2,2,+ Output 4’
 expression = a.split(",")
 
 //alert(expression[1])
@@ -27,7 +27,7 @@ if(operator.trim() == '+' ){
 }
 else if(operator == '-' ){
        
-    alert()
+    alert( subtract(op1Num, op2Num) )
 }
 else if(operator == '*' ){
     var result=""
@@ -39,10 +39,44 @@ else if(operator == '*' ){
 
 else if(operator == '/' ){
     
-    alert()
+
+    alert(divide(op1Num,op2Num))
 }
 
 }
+function subtract (x, y){
+
+    while (y !=0 ){
+     borrow = (~x ) & y;
+
+     x= x ^ y ;
+
+     y= borrow << 1;
+    }
+ 
+
+ return x;
+
+
+
+}
+
+function divide (dividend, divisor){
+     sign = ((dividend < 0)  ^ (divisor < 0)) ? - 1:1
+     dividend = Math.abs (dividend)
+     divisor= Math.abs(divisor)
+
+     quotient = 0
+
+     while (dividend >= divisor){
+         dividend -= divisor
+         ++quotient
+     }
+
+     if(sign==-1) quotient = -quotient
+     return quotient;
+
+} 
 
 function getTally(num){
     tally=""

@@ -1,12 +1,31 @@
-kp1 = prompt("kangaroo1,  initial location: ")
-kp2 = prompt("kangaroo 2, enter initial location: ")
+kp1 = prompt("kangaroo1,  initial location: (e.g 2 positive number)")
+kp2 = prompt("kangaroo 2, enter initial location:(e.g positive number 3) ")
 
 kv1= prompt("kangaroo1, enter rate: ")
 kv2= prompt("kangaroo2, enter rate: ")
 
-result = isSameLocationPossible(kp1, kp2, kv1, kv2)
+if(!isNaN(kp1) || parseInt(kp1,10) < 1 ){
+    alert("please enter a valid number")
+}
+else if(!isNaN(kp2) || parseInt(kp2,10) < 1 ){
+    alert("please enter a valid number")
+}
+else if(!isNaN(kv1) || parseInt(kv1,10) < 1 ){
+    alert("please enter a valid number")
+}
+else if(!isNaN(kv2) || parseInt(kv2,10) < 1 ){
+    alert("please enter a valid number")
+}
 
-alert(result)
+
+else
+
+  {
+    result = isSameLocationPossible(kp1, kp2, kv1, kv2)
+
+    alert(result)
+  }
+
 
 
 function isSameLocationPossible(x1,x2,v1,v2){

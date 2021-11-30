@@ -1,7 +1,7 @@
-inputPlayer1 = prompt("enter scores for player1:");// Input  2,2,+ Output 4’
+inputPlayer1 = prompt("enter scores for player1:(e.g 1, 4, 7, 2, 4)")
  array1 = inputPlayer1.split(",")//[1, 4, 7, 2, 4]  //Tom
  
- inputPlayer2= prompt("enter scores for player2:");
+ inputPlayer2= prompt("enter scores for player2:(e.g 3, 4, 2, 4, 4)");
  array2 = inputPlayer2.split(",")//[3, 4, 2, 4, 4]  //jack
 
  getOverallScore( array1, array2)  // Tom [1, 4, 7, 2, 4] Jack [3, 4, 2, 4, 4]
