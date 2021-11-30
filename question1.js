@@ -14,35 +14,56 @@ var op1= expression[0]
 var op2 = expression[1]
 var operator=expression[2]
 
-let op1Num = getNumber(op1.trim())
-let op2Num = getNumber(op2.trim())
-
-op1Tally=getTally(op1Num) 
-op2Tally=getTally(op2Num)
-
 if(operator.trim() == '+' ){  
  
-    alert(  (op1Tally +  "" + op2Tally).length )
+    alert( add (  Number(op1 ), Number(op2) ) )
              
 }
 else if(operator == '-' ){
        
-    alert( subtract(op1Num, op2Num) )
+    alert( subtract(Number(op1 ), Number(op2)) )
 }
 else if(operator == '*' ){
-    var result=""
-    for(i=1; i<= op2Num; i++)
-       result += op1Tally
     
-       alert(result.length)
+    
+       alert(multiply(Number(op1 ), Number(op2)))
 }
 
 else if(operator == '/' ){
     
 
-    alert(divide(op1Num,op2Num))
+    alert(divide(Number(op1 ), Number(op2)))
 }
 
+}
+
+function multiply(x,y){
+    if(y == 0)
+     return 0
+
+     if(y > 0)
+        return (x + multiply(x, y-1))
+
+    if(y < 0)
+       return -multiply(x, -y)
+ 
+     return -1
+    //    result=0
+    // for(i=1; i<=y; i++){
+    //     result += x
+    // }
+    // return result
+}
+
+
+function add(x,y){
+    while (y != 0){
+        carry = x & y
+        x = x ^ y
+        y = carry << 1
+    }
+
+    return x
 }
 function subtract (x, y){
 
